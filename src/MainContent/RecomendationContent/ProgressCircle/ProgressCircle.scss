@@ -1,0 +1,29 @@
+$bgDefault: #ffffff;
+$typoPrimary: #002033;
+$typoSecondary: #00203399;
+
+.progressCircleArea{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22.9em;
+    float: left;
+}
+
+.progressCircle{
+    width: 164px;
+    height: 164px;
+}
+
+
+.taskCounter{
+    font-size: 1.5em;
+    color: $typoPrimary;
+    font-weight: 400;
+}
+
+.taskName{
+    color: $typoSecondary;
+    font-size: 14px;
+}

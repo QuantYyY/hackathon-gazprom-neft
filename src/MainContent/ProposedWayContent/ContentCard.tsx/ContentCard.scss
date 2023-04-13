@@ -1,0 +1,49 @@
+$bgDefault: #FFFFFF;
+$typoPrimary: #002033;
+$bgSuccess: #22C38E;
+
+
+.contentCard{
+    width: 29em;
+    height: 16.25em;
+    background-color: $bgDefault;
+    padding: 2em;
+    position: relative;
+}
+
+.iconArea{
+    width: 25em;
+    position: relative;
+}
+
+.greenCircle {
+    width: 1.5em;
+    height: 1.5em;
+    background-color: $bgSuccess;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.circleIcon {
+    color: white;
+}
+
+.progressSpin{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progressSpinSvg{
+    display: 'inline-block';
+    vertical-align: 'bottom';
+}
