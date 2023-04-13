@@ -1,12 +1,18 @@
 import { FC } from 'react';
 import './MainContent.scss';
 
+import RecomendationContent from './RecomendationContent';
+import ProposedWayContent from './ProposedWayContent';
+
 const MainContent: FC = () => {
 
-    return(
+    return (
         <>
-            <div className='mainContent'>
-                Whazzaaaaaup
+            <div className='mainArea'>
+                <div className='content'>
+                    <RecomendationContent />
+                    <ProposedWayContent />
+                </div>
             </div>
         </>
     )
