@@ -3,6 +3,7 @@ import './MainContent.scss';
 
 import RecomendationContent from './RecomendationContent';
 import ProposedWayContent from './ProposedWayContent';
+import CatalogContent from './CatalogContent/CatalogContent';
 
 const MainContent: FC = () => {
 
@@ -12,6 +13,7 @@ const MainContent: FC = () => {
                 <div className='content'>
                     <RecomendationContent />
                     <ProposedWayContent />
+                    <CatalogContent />
                 </div>
             </div>
         </>

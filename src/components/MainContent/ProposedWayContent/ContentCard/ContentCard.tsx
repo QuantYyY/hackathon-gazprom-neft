@@ -9,6 +9,7 @@ import { IconRestart } from '@consta/uikit/IconRestart';
 import { IconCheck } from '@consta/uikit/IconCheck';
 import { CircularProgressbar , buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { useAppSelector } from '../../../../hook';
 
 const ContentCard: FC<ContentCardProps> = (props) => {
 
@@ -17,7 +18,7 @@ const ContentCard: FC<ContentCardProps> = (props) => {
             <Card className='contentCard' style={{ borderRadius: '0.5em' }}>
                 <Text size='2xl' color='primary'>{props.title}</Text>
                 <div className="contentCategories" style={{ paddingTop: '0.5em' }}>
-                    <Text view="secondary" size='s'>Для новичка • Основы работы</Text>
+                    <Text view="secondary" size='s'>{props.categories}</Text>
                 </div>
                 <Text view="primary" size="s" style={{ paddingTop: '0.5em' }}>{props.info}</Text>
 
