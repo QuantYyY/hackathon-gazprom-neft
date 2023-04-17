@@ -31,7 +31,7 @@ export const getLocation = createAsyncThunk<any, coordinates>(
     'location/getLocation',
 
     async (coord) => {
-        const response = axios.post('http://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address',
+        const response = await axios.post('http://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address',
             {
                 lat: coord.lat,
                 lon: coord.lon,

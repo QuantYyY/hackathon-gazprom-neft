@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const token = '94e7f090610189d358dda5c8321c4e0f3f766a4a';
@@ -9,37 +9,42 @@ const config = {
     }
 }
 
-type resultObject = {
-    value: string,
-}
 
-export type companySearchObject = {
-    label: string;
-}
-
-type companySeachState = {
-    addressTips: companySearchObject[];
-}
-
-const initialState: companySeachState = {
-    addressTips: [],
+export type resultObject = {
+    data: {
+        address: {
+            value: string;
+        }
+        inn: string
+    }
+    value: string;
+    unrestricted_value: string;
 }
 
 
-export const getAddress = createAsyncThunk<companySearchObject[], string>(
-    'location/getLocation',
+type companySearchState = {
+    companyTips: resultObject[];
+    currentCompany: resultObject | null;
+    companyList: resultObject[];
+}
+
+const initialState: companySearchState = {
+    companyTips: [],
+    currentCompany: null,
+    companyList: [],
+}
+
+
+export const getCompany = createAsyncThunk<resultObject[], string>(
+    'location/getCompany',
     async (query) => {
-        const response = axios.post('https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address',
+        const response = await axios.post('https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party',
             {
                 query: query,
             },
             config
         ).then((response) => {
-            return (response.data.suggestions.map((obj: resultObject) => {
-                return {
-                    label: obj.value
-                }
-            }))
+            return response.data.suggestions;
         }).catch((error) => {
             console.log(error)
         })
@@ -47,25 +52,51 @@ export const getAddress = createAsyncThunk<companySearchObject[], string>(
     }
 )
 
+export const getCompanyUseINN = createAsyncThunk<resultObject[], string>(
+    'location/getCompanyINN',
+    async (query) => {
+        const response = axios.post('https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party',
+            {
+                query: query,
+            },
+            config
+        ).then((response) => {
+            return response.data.suggestionsж
+        }).catch((error) => {
+            console.log(error)
+        })
+        return response;
+    }
+)
 
 const companySearchSlice = createSlice({
     name: 'companySearch',
     initialState,
     reducers: {
 
+        setCurrentCompany(state, action: PayloadAction<resultObject>) {
+            if (action.payload) {
+                state.currentCompany = action.payload;
+            }
+        }
+
     },
     extraReducers: (builder) => {
         builder
-            .addCase(getAddress.fulfilled, (state, action) => {
+            .addCase(getCompany.fulfilled, (state, action: PayloadAction<resultObject[]>) => {
                 if (action.payload) {
-                    state.addressTips = action.payload
-                    console.log(1)
+                    state.companyTips = action.payload;
+                }
+            })
+            .addCase(getCompanyUseINN.fulfilled, (state, action: PayloadAction<resultObject[]>) => {
+                if (action.payload) {
+                    state.companyList = action.payload;
                 }
             })
 
     }
 });
 
-export const { } = companySearchSlice.actions;
+export const { setCurrentCompany } = companySearchSlice.actions;
 
 export default companySearchSlice.reducer;
