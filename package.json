@@ -1,12 +1,15 @@
 {
   "name": "hackaton-gazprom",
   "private": true,
+  "homepage": "https://quantyyy.github.io/hackathon-riba-tech/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy" : "gh-pages -d build",
+    "predeploy": "yarn build"
   },
   "dependencies": {
     "@consta/uikit": "^4.14.2",

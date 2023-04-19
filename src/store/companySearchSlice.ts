@@ -60,7 +60,7 @@ export const getCompany = createAsyncThunk<resultObject[], string>(
     }
 )
 
-export const getCompanyUseINN = createAsyncThunk<resultObject[]>(
+export const getCompanyUseINN = createAsyncThunk<resultObject[], string>(
     'location/getCompanyINN',
     async (query) => {
         const response = axios.post('https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party',
@@ -69,7 +69,6 @@ export const getCompanyUseINN = createAsyncThunk<resultObject[]>(
             },
             config
         ).then((response) => {
-            console.log(response.data.suggestions)
             return response.data.suggestions;
         }).catch((error) => {
             console.log(error)
