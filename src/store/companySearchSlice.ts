@@ -14,8 +14,16 @@ export type resultObject = {
     data: {
         address: {
             value: string;
-        }
-        inn: string
+        };
+        inn: string;
+        state: {
+            status: 'ACTIVE' | 'LIQUIDATING' | 'LIQUIDATED' | 'BANKRUPT' | 'REORGANIZING';
+            registration_date: number;
+            liquidation_date: number;
+        };
+        founders: {
+            name: string;
+        }[];
     }
     value: string;
     unrestricted_value: string;
@@ -61,7 +69,8 @@ export const getCompanyUseINN = createAsyncThunk<resultObject[], string>(
             },
             config
         ).then((response) => {
-            return response.data.suggestionsж
+            console.log(response.data.suggestions)
+            return response.data.suggestions;
         }).catch((error) => {
             console.log(error)
         })

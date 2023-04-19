@@ -1,6 +1,7 @@
 import { FC } from "react";
 
-import SearchCompanyCombox from './SearchCompanyCombox'
+import SearchCompanyCombox from './SearchCompanyCombox';
+import SearchCompanyList from "./SearchCompanyList/SearchCompanyList";
 
 
 const CompanySearchPage: FC = () => {
@@ -9,6 +10,7 @@ const CompanySearchPage: FC = () => {
         <>
             <div className="content">
                 <SearchCompanyCombox />
+                <SearchCompanyList />
             </div>
         </>
     );

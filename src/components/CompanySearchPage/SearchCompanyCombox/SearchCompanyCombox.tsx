@@ -26,11 +26,13 @@ const SearchAddressCombox: FC = () => {
                 onChange={({ value }) => {
                     setValue(value)
                     if (value !== null) {
-                        dispatch(setCurrentCompany(value))
-                        dispatch(getCompanyUseINN(value.data.inn))
+                        dispatch(setCurrentCompany(value));
+                        dispatch(getCompanyUseINN(value.data.inn));
                     } else if (value === null) {
                         dispatch(getCompany(''));
-                        dispatch(setCurrentCompany({} as resultObject))
+                        dispatch(setCurrentCompany({} as resultObject));
+                        dispatch(getCompanyUseINN(''));
+
                     }
                 }}
                 searchFunction={() => {
