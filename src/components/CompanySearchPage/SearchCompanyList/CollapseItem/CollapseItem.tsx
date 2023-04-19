@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import 'dayjs/locale/ru';
 import { v4 as uuidv4 } from 'uuid';
 
