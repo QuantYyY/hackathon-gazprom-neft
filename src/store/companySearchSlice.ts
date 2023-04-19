@@ -9,7 +9,6 @@ const config = {
     }
 }
 
-
 export type resultObject = {
     data: {
         address: {

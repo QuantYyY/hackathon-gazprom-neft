@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 import { Combobox } from "@consta/uikit/Combobox";
@@ -11,10 +11,6 @@ const SearchAddressCombox: FC = () => {
     const dispatch = useAppDispatch();
 
     const [value, setValue] = useState<resultObject | null>();
-
-    useEffect(() => {
-        console.log(store.companyList);
-    }, [store.companyList]);
 
     return (
         <>
