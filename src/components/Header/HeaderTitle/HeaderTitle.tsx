@@ -8,7 +8,7 @@ const HeaderTitle: FC = () => {
         <>
             <HeaderModule>
                 <HeaderLogo>
-                    <Text>
+                    <Text view='primary' weight='bold'>
                         Портал Разработчика
                     </Text>
                 </HeaderLogo>

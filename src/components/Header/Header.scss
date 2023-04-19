@@ -2,3 +2,9 @@
 .header{
     background-color: #ffffff;
 }
+
+.HeaderMenu-Link_active:before{
+    max-width: 100% !important;
+    height: 2px !important; 
+    border-radius: 0 !important;
+}

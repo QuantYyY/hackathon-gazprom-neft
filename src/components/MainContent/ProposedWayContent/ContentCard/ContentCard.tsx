@@ -9,7 +9,6 @@ import { IconRestart } from '@consta/uikit/IconRestart';
 import { IconCheck } from '@consta/uikit/IconCheck';
 import { CircularProgressbar , buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { useAppSelector } from '../../../../hook';
 
 const ContentCard: FC<ContentCardProps> = (props) => {
 

@@ -6,7 +6,7 @@ const HeaderUser: FC = () => {
 
     return (
         <>
-            <HeaderModule indent='l'>
+            <HeaderModule indent='s'>
                 <HeaderLogin
                     isLogged={true}
                     personName='Михаил Романов'

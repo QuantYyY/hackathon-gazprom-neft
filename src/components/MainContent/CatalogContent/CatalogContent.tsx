@@ -4,7 +4,6 @@ import { Text } from "@consta/uikit/Text";
 import CatalogCards from "./CatalogCards";
 import CatalogButtonGroup from "./CatalogButtonGroup";
 
-
 const CatalogContent: FC = () => {
 
 

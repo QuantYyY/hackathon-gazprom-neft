@@ -7,7 +7,7 @@ type headerState = {
 }
 
 const initialState: headerState = {
-    selectedTab: "Запросы к API",
+    selectedTab: "Моё обучение",
 }
 
 const headerSlice = createSlice({
