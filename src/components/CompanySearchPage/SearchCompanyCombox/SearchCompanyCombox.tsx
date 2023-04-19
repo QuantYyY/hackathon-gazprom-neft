@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 import { Combobox } from "@consta/uikit/Combobox";
