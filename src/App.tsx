@@ -1,19 +1,22 @@
-import { } from 'react';
-import { Theme, presetGpnDefault } from '@consta/uikit/Theme';
+import { FC } from 'react';
 import './App.scss';
 
-import Header from './Header/Header';
-import MainContent from './MainContent/MainContent';
+import Header from './components/Header/Header';
+import PageSwitching from './components/PageSwitching/PageSwitching';
 
-function App() {
+import { useAppSelector } from './hook';
+
+const App: FC = () => {
+
+  const store = useAppSelector(store => store.header);
+
   return (
     <>
-      <Theme preset={presetGpnDefault}>
-        <Header />
-        <MainContent />
-      </Theme>
+      <Header />
+      <PageSwitching />
     </>
-  )
+  );
+
 }
 
 export default App

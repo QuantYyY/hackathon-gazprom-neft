@@ -1,0 +1,31 @@
+$bgDefault: #ffffff;
+$typoPrimary: #002033;
+$typoSecondary: #00203399;
+$bgBorder: #00416633;
+
+.recomendationCard{
+    background-color: $bgDefault !important;
+    height: 15.5em;
+    margin-bottom: 1.5em;
+}
+
+.line-container {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid $bgBorder;  
+}
+
+.r{
+    margin-left: 0.875em;
+}
+
+.l{
+    margin-right: 0.875em;
+}
+
+
