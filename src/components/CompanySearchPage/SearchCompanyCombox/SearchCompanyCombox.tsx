@@ -12,10 +12,6 @@ const SearchAddressCombox: FC = () => {
 
     const [value, setValue] = useState<resultObject | null>();
 
-    useEffect(() => {
-        console.log(store.companyList);
-    }, [store.companyList]);
-
     return (
         <>
             <Combobox
